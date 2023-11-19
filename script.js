@@ -212,3 +212,21 @@ startGame();
 
 drawGrid();
 updateStats();
+// Add these functions to your existing script.js file
+
+function openReadMe() {
+  document.getElementById('readMeModal').style.display = 'block';
+}
+
+function closeReadMe() {
+  document.getElementById('readMeModal').style.display = 'none';
+}
+
+// Close the modal if the user clicks outside of it
+window.onclick = function (event) {
+  const modal = document.getElementById('readMeModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
