@@ -1,5 +1,5 @@
 # Jeu de la Vie 
-
+## Lien jeu deploye : https://damesokhna-esp-dic.netlify.app/
 ## Présentation
 
 Ce projet implémente le Jeu de la Vie de Conway, un automate cellulaire qui évolue selon des règles simples. Le jeu consiste en une grille de cellules, chacune pouvant être vivante ou morte. Les cellules évoluent à travers des générations basées sur des règles spécifiques, créant des motifs intéressants.
