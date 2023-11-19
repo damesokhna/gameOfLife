@@ -1,107 +1,197 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#inputContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#grid {
+  display: grid;
+  border: 1px solid #333;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+
+.cell.circle {
+  border-radius: 50%;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#stats {
+  margin-top: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+  background-color: white;
+  cursor: ew-resize;
+  margin-top: -12.5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+  background-color: white;
+  cursor: ew-resize;
+  margin-top: -12.5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: linear-gradient(to right, #4caf50, #ffffff);
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 10px;
+  background: linear-gradient(to right, #4caf50, #ffffff);
+  border: none;
+  border-radius: 5px;
+}
+/* Ajoutez ces styles à votre fichier styles.css existant */
+
+/* Styles pour le popup README */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Ajoutez une transition pour une apparence plus fluide */
+.modal-content {
+  transition: background-color 0.3s ease;
+}
+
+/* Ajoutez un style pour le survol du contenu du README */
+.modal-content:hover {
+  background-color: #f0f0f0;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  overflow: auto; /* Activer le défilement uniquement si nécessaire */
+  max-height: 70vh; /* Hauteur maximale pour éviter le débordement */
+}
+/* Ajoutez ces règles de média-query à la fin de votre fichier CSS */
+
+/* Règles pour la responsivité */
+@media only screen and (max-width: 600px) {
   #inputContainer {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: stretch;
   }
-  
+}
+/* Ajoutez ces règles de média-query à la fin de votre fichier CSS */
+
+/* Règles pour la responsivité */
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  #container {
+    padding: 10px;
+  }
+
   #grid {
-    display: grid;
-    border: 1px solid #333;
+    max-width: 100%;
+    overflow: auto;
   }
-  
+
   .cell {
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ccc;
+    width: 15px;
+    height: 15px;
   }
-  
-  .cell.circle {
-    border-radius: 50%;
-  }
-  
+
   button {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    width: 100%;
   }
-  
+
   input {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
+    width: 100%;
   }
-  
+
   footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    padding: 5px;
+    font-size: 14px;
   }
-  
-  #stats {
-    margin-top: 10px;
-  }
-  
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border: 2px solid #4caf50;
-    border-radius: 50%;
-    background-color: white;
-    cursor: ew-resize;
-    margin-top: -12.5px;
-  }
-  
-  input[type="range"]::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border: 2px solid #4caf50;
-    border-radius: 50%;
-    background-color: white;
-    cursor: ew-resize;
-    margin-top: -12.5px;
-  }
-  
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 10px;
-    background: linear-gradient(to right, #4caf50, #ffffff);
-    border: none;
-    border-radius: 5px;
-  }
-  
-  input[type="range"]::-moz-range-track {
-    height: 10px;
-    background: linear-gradient(to right, #4caf50, #ffffff);
-    border: none;
-    border-radius: 5px;
-  }
-  
-  
+}
+
